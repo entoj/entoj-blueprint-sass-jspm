@@ -1,0 +1,24 @@
+{% set title = title | default('Please enter title for this example page.') %}
+<!doctype html>
+<html class="no-js" lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ entity.id.idString }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="" />
+        {{ global_nojs() }}
+        {{ global_css() }}
+        <link rel="stylesheet" type="text/css" href="/base/global/assets/css/examples.css" />
+    </head>
+    <body class="t-example t-bare{% block bodyClass %}{% endblock %}">
+        <h1 class="t-example__title">
+            {{ entity.id.idString }}
+        </h1>
+        {% block content %}{% endblock %}
+        {{ global_js() }}
+        {{ global_tracking() }}
+        {% block debug %}{% endblock %}
+    </body>
+</html>

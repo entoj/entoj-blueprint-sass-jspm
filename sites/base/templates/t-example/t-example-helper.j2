@@ -1,0 +1,45 @@
+{% macro t_example_group(label) %}
+
+    {% set moduleClass = 't-example-group' %}
+
+    <div class="{{ moduleClass }}">
+        <p class="{{ moduleClass }}__headline">{{ label }}</p>
+        <div class="{{ moduleClass }}__examples">
+            {{ caller() }}
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro t_example_item(label='', level=4, dimmed=false, style='', bgColor=false, classes='') %}
+
+    {% set moduleClass = 't-example-item' %}
+
+    <div class="{{ moduleClass }} {{ moduleClass }}--{{ level }} {% if dimmed %}{{ moduleClass }}--dimmed{% endif %} {{ classes }}" style="{{ style }}">
+        {% if label %}
+            <h{{ level }} class="{{ moduleClass }}__headline">{{ label }}</h{{ level }}>
+        {% endif %}
+        <div class="{{ moduleClass }}__entity {{ classes }}"
+             {% if bgColor %}style="background-color: {{ bgColor }}"{% endif %}
+        >
+            {{ caller() }}
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro t_example_code() %}
+
+    {% set moduleClass = 't-example-code' %}
+
+    <div class="{{ moduleClass }}">
+        <div class="{{ moduleClass }}__head">
+            <a class="{{ moduleClass }}__btn" onclick="$(this).closest('.t-example-code').toggleClass('is-opened');" href="JavaScript:;" ><span class="{{ moduleClass }}__plus">+</span><span class="{{ moduleClass }}__minus">-</span> Aufruf anzeigen</a>
+        </div>
+        <pre class="{{ moduleClass }}__content">
+            {{ caller() }}
+        </pre>
+    </div>
+
+{% endmacro %}
+

@@ -1,0 +1,38 @@
+{
+  "name": "entoj-blueprint-sass-jspm",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=6.x"
+  },
+  "scripts": {
+    "start": "./entoj.sh start",
+    "postinstall": "jspm install"
+  },
+  "dependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "co": "^4.6.0",
+    "entoj-gui": "^0.2.0",
+    "entoj-html": "^0.2.2",
+    "entoj-image": "^0.2.2",
+    "entoj-jspm": "^0.2.1",
+    "entoj-sass": "^0.2.1",
+    "entoj-scaffold": "^0.2.0",
+    "entoj-system": "^0.2.6",
+    "normalize-scss": "^7.0.0",
+    "sassy-maps": "github:at-import/Sassy-Maps#v0.4.0",
+    "susy": "^3.0.1",
+    "jspm": "^0.16.53"
+  },
+  "optionalDependencies": {},
+  "devDependencies": {},
+  "jspm": {
+    "configFile": "jspm-configuration.js",
+    "dependencies": {},
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.38",
+      "babel-runtime": "npm:babel-runtime@^5.8.38",
+      "core-js": "npm:core-js@^1.2.7"
+    }
+  }
+}
