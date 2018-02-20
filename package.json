@@ -7,7 +7,8 @@
   },
   "scripts": {
     "start": "./entoj.sh start",
-    "postinstall": "jspm install"
+    "postinstall": "jspm install",
+    "link": "npm link entoj-system entoj-html entoj-image entoj-jspm entoj-sass & npm install"
   },
   "dependencies": {
     "breakpoint-sass": "^2.7.1",
