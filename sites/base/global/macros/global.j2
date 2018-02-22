@@ -2,22 +2,21 @@
     Provides the default stylesheets for the base site
 #}
 {% macro global_css() %}
-    <link rel="stylesheet" media="all" href="/base/css/common.css" />
+    <link rel="stylesheet" media="all" href="{{ false|cssUrl }}">
 {% endmacro %}
-
 
 {##
     Provides the js bootstraping for the base site
 #}
 {% macro global_js() %}
     {% if environment.get('js.bundle', false) %}
-        <script src="/base/common.js"></script>
+        <script src="{{ false|jsUrl }}"></script>
     {% else %}
-        <script src="/jspm_packages/system.js"></script>
-        <script src="/jspm.js"></script>
+        <script src="{{ 'runtime'|jsUrl }}"></script>
+        <script src="{{ 'configuration'|jsUrl }}"></script>
     {% endif %}
     <script>
-        System.import('base/global/js/bootstrap');
+        System.import('global/bootstrap');
     </script>
 {% endmacro %}
 
@@ -26,7 +25,7 @@
     Provides the js for grid helper overlay
 #}
 {% macro global_grid_helper_js() %}
-    <script type="text/javascript" src="/base/global/js/gridhelper.js"></script>
+    <script type="text/javascript" src="{{ '/base/global/js/gridhelper.js'|jsUrl }}"></script>
 {% endmacro %}
 
 
