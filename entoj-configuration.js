@@ -34,7 +34,7 @@ const configuration = require('entoj-system').configure(
             translationsFile: '${data}/translations.json',
             settingsFile: '${data}/settings.json'
         },
-        setting:
+        settings:
         {
             jspm:
             {
