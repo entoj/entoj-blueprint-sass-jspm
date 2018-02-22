@@ -39,6 +39,7 @@ const configuration = require('entoj-system').configure(
             jspm:
             {
                 configFilename: 'jspm-configuration.js'
+            }
         }
     }, localConfiguration);
 
