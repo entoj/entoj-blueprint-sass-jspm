@@ -4,6 +4,8 @@
  * Requirements
  */
 const fs = require('fs');
+const tryRequire = require('try-require');
+
 
 /**
  * Local configuration
@@ -56,7 +58,10 @@ for (const pck in packages.dependencies)
 {
     if (pck.startsWith('entoj-') && pck !== 'entoj-system')
     {
-        configuration.register(require(pck));
+        const module = tryRequire(pck);
+        if (module && typeof module.register === 'function') {
+            configuration.register(module);
+        }
     }
 }
 
